@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneWave - Feel the Wave</title>
+    <link rel="icon" href="img/logo (2).svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utility.css">
+
+</head>
+
+<body>
+    <div class="container animated-bg flex bg-black">
+        <div class="left">
+            <div class="close"><img class="invert" style="width:30px" src="img/close.svg" alt=""></div>
+            <div class="home bg-grey rounded m-1 p-1">
+                <img class="size" src="img/tunewave_logo.png" alt="logo">
+                <ul>
+                    <li>
+                        <img class="invert" src="img/home.svg" alt="Home">Home
+                    </li>
+                    <li><img class="invert" src="img/search.svg" alt="Search">Search</li>
+                </ul>
+            </div>
+            <div class="library bg-grey rounded m-1 p-1">
+                <div class="heading">
+                    <img class="invert" src="img/playlist.svg" alt="">
+                    <h2>Your Library</h2>
+                </div>
+                <div class="songList">
+                    <ul>
+                        <li><img class="invert" src="img/music.svg" alt="">
+                            <div class="info">
+                                <div>Song Name</div>
+                                <div>Song Artist</div>
+                            </div>
+                            <img class="invert" src="img/play.svg" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <div><a  href="https://www.linkedin.com/in/snehith-reddy-pannala-81b648295/"><span> © 2025 Snehith Reddy</span></a></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="header">
+                <div class="nav">
+                    <div class="hamburgerContainer">
+
+                        <img width="40" class="invert hamburger" src="img/hamburger.svg" alt="">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="signupbtn">Sign up</button>
+                    <button class="loginbtn">Log in</button>
+                </div>
+            </div>
+            <div class="spotifyPlaylists">
+                <h1>TuneWave Playlists</h1>
+                <div class="cardContainer">
+                    <div data-folder="hit3" class="card">
+                        <img src="songs/hit3.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+                        <h2>HIT The Third Case</h2>
+                        <p>Mickey J Meyer</p>
+                    </div>
+                    <div data-folder="salaar" class="card">
+                        <img src="songs/salaarorg.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+                        <h2>Salaar Part-1</h2>
+                        <p>Ravi Basrur</p>
+                    </div>
+                    <div data-folder="rrr" class="card">
+                        <img src="songs/rrr.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>RRR</h2>
+                        <p>MM Keeravani</p>
+                    </div>
+                    <div data-folder="devara" class="card">
+                        <img src="songs/devara.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Devara Part-1</h2>
+                        <p>Anirudh Ravichander</p>
+                    </div>
+                    <div data-folder="pushpa2" class="card">
+                        <img src="songs/pushpa2.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Pushpa The Rise</h2>
+                        <p>Devi Sri Prasad</p>
+                    </div>
+                    <div data-folder="weeknd" class="card">
+                        <img src="songs/weeknd.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Weeknd</h2>
+                        <p></p>
+                    </div>
+                    <div data-folder="daakumaharaj" class="card">
+                        <img src="songs/daakumah.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Daaku Maharaj</h2>
+                        <p>SS Thaman</p>
+                    </div>
+                    <div data-folder="gunturkaram" class="card">
+                        <img src="songs/gunturkaram.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Guntur Karam</h2>
+                        <p>SS Thaman</p>
+                    </div>
+                    <div data-folder="kgf2" class="card">
+                        <img src="songs/kgf2rocky.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>KGF 2</h2>
+                        <p>Ravi Basrur</p>
+                    </div>
+                    <div data-folder="leo" class="card">
+                        <img src="songs/leo.jpg" alt="Karan Aujla">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Leo</h2>
+                        <p>Anirudh Ravichander</p>
+                    </div>
+                    <div data-folder="gamechanger" class="card">
+                        <img src="songs/gamechanger.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Game Changer</h2>
+                        <p>SS Thaman</p>
+                    </div>
+                    <div data-folder="kalki" class="card">
+                        <img src="songs/kalki.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Kalki Part - 1</h2>
+                        <p>Santosh Narayanan</p>
+                    </div>
+                    <div data-folder="coolie" class="card">
+                        <img src="songs/coolie.jpeg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Coolie</h2>
+                        <p>Anirudh Ravichander</p>
+                    </div>
+                    <div data-folder="radheshyam" class="card">
+                        <img src="songs/radheshyam.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Radheshyam</h2>
+                        <p>Justin Prabhakaran</p>
+                    </div>
+                    <div data-folder="kushi" class="card">
+                        <img src="songs/kushi.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Kushi</h2>
+                        <p>Hesham Abdul Wahab</p>
+                    </div>
+                    <div data-folder="rangasthalam" class="card">
+                        <img src="songs/rangasthalam.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Rangasthalam</h2>
+                        <p>Devi Sri Prasad</p>
+                    </div>
+                    <div data-folder="kingdom" class="card">
+                        <img src="songs/kingdom.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Kingdom</h2>
+                        <p>Anirudh Ravichander</p>
+                    </div>
+                    <div data-folder="sankrathrikivasthunnam" class="card">
+                        <img src="songs/sankrathrikivasthunnam.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Sankrathriki Vasthunnam</h2>
+                        <p>Bheems Cecliroleo</p>
+                    </div>
+                    <div data-folder="shyamsingharoy" class="card">
+                        <img src="songs/shyamsingharoy.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Shyam Singha Roy</h2>
+                        <p>Mickey J Meyer</p>
+                    </div>
+                    <div data-folder="sitaramam" class="card">
+                        <img src="songs/sitaramam.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Sita Ramam</h2>
+                        <p>Vishal Chandrasekhar</p>
+                    </div>
+                    <div data-folder="thandel" class="card">
+                        <img src="songs/thandel.jpg" alt="Diljit Dosanjh">
+                        <img class="play" src="img/playcircle.svg" alt="">
+
+                        <h2>Thandel</h2>
+                        <p>Devi Sri Prasad</p>
+                    </div>
+                </div>
+                <div class="playbar">
+
+                    <audio id="audioPlayer" src=""></audio>
+
+                    <div class="seekbar" id="seekbar">
+                        <div class="circle" id="circle"></div>
+                    </div>
+
+                    <div class="abovebar">
+                        <div class="songinfo" id="songinfo">Select a song</div>
+
+                        <div class="songbuttons">
+                            <img width="35" id="previous" src="img/prevsong.svg" alt="Previous">
+                            <img width="35" id="play" src="img/play.svg" alt="Play">
+                            <img width="35" id="next" src="img/nextsong.svg" alt="Next">
+                        </div>
+
+                        <div class="timevol">
+                            <div class="songtime" id="songtime">00:00 / 00:00</div>
+                            <div class="volume">
+                                <img width="25" src="img/volume.svg" alt="Volume">
+                                <div class="range">
+                                    <input type="range" id="volumeControl" min="0" max="1" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
