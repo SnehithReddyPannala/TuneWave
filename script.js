@@ -1,19 +1,8 @@
 
-async function getSongs(folder){
-    currFolder = folder; 
-    let a=await fetch(`http://127.0.0.1:5500/music/${folder}/`);
-    let response=await a.text();
-    console.log(response);
-    let div=document.createElement("div");
-    div.innerHTML=response;
-    let as=div.getElementsByTagName("a");
-    let songs=[];
-    for(let i=0;i<as.length;i++){
-        const elements= as[i];
-        if(elements.href.endsWith(".mp3")){
-            songs.push(elements.href);
-        }
-    }
+async function getSongs(folder) {
+    currFolder = folder;
+    const res = await fetch(`music/${folder}/info.json`);
+    const songs = await res.json(); // songs = ["Dhop.mp3", ...]
     return songs;
 }
 function secondsToMinutesSeconds(seconds) {
@@ -56,8 +45,8 @@ const playMusic = (track, pause = false) => {
 };
 
 async function main(){
-    songs= await getSongs("gunturkaram"); 
-    currFolder = "gunturkaram"; 
+    songs= await getSongs("gamechanger"); 
+    currFolder = "gamechanger"; 
     const firstRawName = decodeURIComponent(songs[0].split("/").pop());
     const firstCleanedName = firstRawName.replace(" - (Raag.Fm)", "");
     const firstFinalName = firstCleanedName.replace(".mp3", "");
