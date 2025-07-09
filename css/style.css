@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    overflow-x: hidden; /* Prevents horizontal scroll from any overflow */
+    overflow-y: auto; /* Prevents horizontal scroll from any overflow */
 }
 
 *{
@@ -49,19 +49,9 @@ body {
 .heading img{
     width:29px;
 }
-.footer{
-    display: flex;
-    font-size: 16px;
-    font-weight: none;
-    color: grey;
-    justify-content: center;
-    position: absolute;
-    bottom: 15px;
-}
-.footer a{
-    color: grey;
-    text-decoration: none;
-}
+
+
+
 
 .library{
     min-height: 80vh;
@@ -356,6 +346,19 @@ body {
   outline: none;
   transition: background 0.3s;
 }
+.library {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.songList {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+
+
 
 /* Chrome & Safari Thumb */
 #volumeControl::-webkit-slider-thumb {
@@ -383,6 +386,31 @@ body {
 #volumeControl:hover {
   background: #444;
 }
+.footer2{
+    width: 100%;
+    text-align: center;
+    padding: 16px 0;
+    color: grey;
+    font-size: 14px;
+    display: block;
+    margin-top: 40px;
+}
+.footer2 a{
+    position: static;
+    text-align: center;
+    color: grey;
+    text-decoration: none;
+    visibility: visible;
+}
+.footer2 a:hover {
+    color: white;
+}
+.footer1 {
+    visibility: hidden;
+}
+
+
+
 
 @media (max-width: 1200px) {
     .left {
@@ -397,6 +425,53 @@ body {
         position: fixed;
         top: 0;
     }
+   .footer1 {
+    visibility: visible;
+  width: 100%;
+  text-align: center;
+  padding: 16px 0;
+  color: grey;
+  background-color: black;
+  font-size: 14px;
+  display: block;
+  margin-top: 40px;
+}
+
+.footer1 a {
+  color: grey;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer1 a:hover {
+    color: white;
+}
+.footer2 a{
+    visibility: hidden;
+}
+
+
+     .left {
+    top: 80px;
+    overflow-y: auto;
+    z-index: 1100;
+    padding-bottom: 0;
+  }
+
+  .library {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .songList {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 0;
+  }
+
+ 
+
 
     .songinfo,
     .songtime {
@@ -479,6 +554,21 @@ body {
   .volume {
     display: none;
   }
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Keep it above everything else */
+}
+.spotifyPlaylists {
+    padding: 16px;
+    margin-top: 80px; /* enough space for the fixed header */
+}
+.left {
+    top: 80px; /* Adjust based on header height */
+    overflow-y: auto;
+  }
+
 
     .playbar{
         width:90%;
@@ -516,6 +606,7 @@ body {
 
     .left{ 
         width: 100vw;
+        padding-bottom: 60px;
     }
     html, body {
     margin: 0;
@@ -523,8 +614,34 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: black; /* Removes grey side gutters */
-    overflow-x: hidden;
+    overflow-y: auto;
 }
+.container {
+    height: auto;
+    overflow-y: auto;
+}   
+
+.right {
+    overflow-y: auto;
+}
+.left {
+    overflow-y: auto; 
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Keep it above everything else */
+}
+.spotifyPlaylists {
+    padding: 16px;
+    margin-top: 80px; /* enough space for the fixed header */
+}
+.left {
+    top: 60px; /* Adjust based on header height */
+    overflow-y: auto;
+  }
+
 
 .cardContainer {
     display: flex;
@@ -541,6 +658,13 @@ body {
 .right {
     width: 100vw;
     background-color: black;
+}
+.footer2 a{
+    position: static;
+    text-align: center;
+    color: grey;
+    text-decoration: none;
+    visibility: visible;
 }
 
 .playbar {
@@ -568,6 +692,32 @@ body {
   .card.active {
   background-color: #585757 !important;
 }
+   .footer1 {
+    visibility: visible;
+  width: 100%;
+  text-align: center;
+  padding: 16px 0;
+  color: grey;
+  background-color: black;
+  font-size: 14px;
+  display: block;
+  margin-top: 40px;
+}
+
+.footer1 a {
+  color: grey;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer1 a:hover {
+    color: white;
+}
+.footer2 a{
+    visibility: hidden;
+}
+
+
 }
 
 
