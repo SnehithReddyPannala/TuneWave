@@ -65,7 +65,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(34 34 34);
+    background-color: #121212;
 }
 
 .header>* {
@@ -280,7 +280,9 @@ body {
     left: 0%;
     transition: left 0.5s;
 }
-
+.buttons button{
+    visibility: hidden;
+}
 .songbuttons img {
     cursor: pointer;
 }
@@ -290,7 +292,9 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
-
+.arrow{
+    visibility: hidden;
+}
 
 .songinfo {
     color: black;
@@ -303,7 +307,6 @@ body {
     color: black;
     padding: 0 12px;
 }
-
 
 .volume {
     display: flex;
@@ -334,7 +337,7 @@ body {
     z-index: 0; /* Behind the playbar */
 }
   .card.active {
-  background-color: #585757 !important;
+  background-color: #585757;
 }
 #volumeControl {
   appearance: none;
