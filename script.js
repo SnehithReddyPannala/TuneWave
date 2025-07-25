@@ -30,6 +30,20 @@ const playMusic = (track, pause = false) => {
     const cleaned = decodeURIComponent(track).replace(" - (Raag.Fm)", "").replace(".mp3", "");
     document.querySelector(".songinfo").innerHTML = cleaned;
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
+
+    const songListItems = document.querySelectorAll(".songList ul li");
+    songListItems.forEach(li => {
+        const file = li.getAttribute("data-file");
+        const playIcon = li.querySelector("img:last-child");
+
+        if (decodeURIComponent(file) === decodeURIComponent(track)) {
+            li.classList.add("playing");
+            playIcon.src = pause ? "img/play.svg" : "img/pause.svg";
+        } else {
+            li.classList.remove("playing");
+            playIcon.src = "img/play.svg";
+        }
+    });
 };
 
 async function main() {
@@ -39,7 +53,7 @@ async function main() {
 
     let songUL = document.querySelector(".songList ul");
     songUL.innerHTML = "";
-     currentSong.volume = 0.7;
+    currentSong.volume = 0.7;
     document.querySelector(".range input").value = 0.7;
     document.querySelector(".volume > img").src = "img/volume.svg";
 
@@ -50,16 +64,44 @@ async function main() {
         playMusic(decodeURIComponent(songs[nextIndex].split("/").pop()));
     });
 
-    play.addEventListener("click", () => {
-        if (!isSongLoaded) return;
-        if (currentSong.paused) {
-            currentSong.play();
-            play.src = "img/pause.svg";
-        } else {
-            currentSong.pause();
-            play.src = "img/play.svg";
-        }
-    });
+   play.addEventListener("click", () => {
+    if (!isSongLoaded) return;
+
+    const currentFile = decodeURIComponent(currentSong.src.split("/").pop());
+    const songListItems = document.querySelectorAll(".songList ul li");
+
+    if (currentSong.paused) {
+        currentSong.play();
+        play.src = "img/pause.svg";
+
+        // Update song list icons
+        songListItems.forEach(li => {
+            const file = li.getAttribute("data-file");
+            const playIcon = li.querySelector("img:last-child");
+
+            if (decodeURIComponent(file) === currentFile) {
+                playIcon.src = "img/pause.svg";
+            } else {
+                playIcon.src = "img/play.svg";
+            }
+        });
+
+    } else {
+        currentSong.pause();
+        play.src = "img/play.svg";
+
+        // Update song list icons
+        songListItems.forEach(li => {
+            const file = li.getAttribute("data-file");
+            const playIcon = li.querySelector("img:last-child");
+
+            if (decodeURIComponent(file) === currentFile) {
+                playIcon.src = "img/play.svg";
+            }
+        });
+    }
+});
+
 
     currentSong.addEventListener("timeupdate", () => {
         document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`;
@@ -129,7 +171,7 @@ async function main() {
 
             if (songs.length > 0) {
                 const firstSong = decodeURIComponent(songs[0].split("/").pop());
-                playMusic(firstSong);
+                playMusic(firstSong, true); // Don't set pause icon on first load
 
                 let songUL = document.querySelector(".songList ul");
                 songUL.innerHTML = "";
@@ -151,8 +193,14 @@ async function main() {
                 Array.from(songUL.getElementsByTagName("li")).forEach(li => {
                     li.addEventListener("click", () => {
                         const fileName = li.getAttribute("data-file");
-                        playMusic(fileName);
-                        console.log("Playing song:", fileName);
+
+                        if (currentSong.src.includes(encodeURIComponent(fileName)) && !currentSong.paused) {
+                            currentSong.pause();
+                            play.src = "img/play.svg";
+                            li.querySelector("img:last-child").src = "img/play.svg";
+                        } else {
+                            playMusic(fileName);
+                        }
                     });
                 });
             }

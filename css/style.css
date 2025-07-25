@@ -241,6 +241,9 @@ body {
     font-size: 13px;
     width: 344px;
 }
+.navList li{
+    visibility: hidden;
+}
 
 .info div {
     word-break: break-all;
